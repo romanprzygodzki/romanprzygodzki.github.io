@@ -1,0 +1,8 @@
+---
+layout: post
+title: "test post"
+date: 2014-10-26 15:48:20 -0400
+comments: true
+categories: test
+---
+I kinda know what I'm doing!
