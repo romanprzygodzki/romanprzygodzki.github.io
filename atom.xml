@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Roman's Octopress blog]]></title>
+  <link href="http://romanprzygodzki.github.io/atom.xml" rel="self"/>
+  <link href="http://romanprzygodzki.github.io/"/>
+  <updated>2014-10-26T15:59:45-04:00</updated>
+  <id>http://romanprzygodzki.github.io/</id>
+  <author>
+    <name><![CDATA[Roman Przygodzki]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Test Post]]></title>
+    <link href="http://romanprzygodzki.github.io/blog/2014/10/26/test-post/"/>
+    <updated>2014-10-26T15:48:20-04:00</updated>
+    <id>http://romanprzygodzki.github.io/blog/2014/10/26/test-post</id>
+    <content type="html"><![CDATA[<p>I kinda know what I&rsquo;m doing!</p>
+]]></content>
+  </entry>
+  
+</feed>
