@@ -3,7 +3,7 @@ layout: post
 title: "creating a Mac OS X 10.10 Yosemite ISO"
 date: 2014-10-27 23:21:00 -0400
 comments: true
-categories: mac, OS_X, terminal
+categories: mac OS_X terminal
 ---
 
 Here are instructions on how to create an ISO of OS X Yosemite 10.10. This might be helpful in the event that a future OS release (e.g. 10.10.1) breaks *that one program* (or four...) that must work and you need to roll back to a prior version of the OS. Hopefully you'll never need to rely on a backup ISO but if you do, you are prepared!
