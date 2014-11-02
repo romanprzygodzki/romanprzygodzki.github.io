@@ -9,7 +9,7 @@
   <meta name="author" content="Roman Przygodzki">
 
   
-  <meta name="description" content="Here are instructions on how to create an ISO of OS X Yosemite 10.10. This might be helpful in the event that a future OS release (e.g. 10.10.1) &hellip;">
+  <meta name="description" content="This evening, I was working on a project that deals with massive sparse matrices. My head promptly started hurting so I decided to play with the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,40 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/">Modular Inverses With the Extended Euclidean Algorithm</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-01T21:44:18-04:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This evening, I was working on a project that deals with massive sparse matrices. My head promptly started hurting so I decided to play with the Extended Euclidean Algorithm instead. This algorithm is used to compute modular inverses, a key element of public key cryptography.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso/">Creating a Mac OS X 10.10 Yosemite ISO</a></h1>
     
     
@@ -102,84 +136,12 @@
 
   <div class="entry-content"><p>Here are instructions on how to create an ISO of OS X Yosemite 10.10. This might be helpful in the event that a future OS release (e.g. 10.10.1) breaks <em>that one program</em> (or four&hellip;) that must work and you need to roll back to a prior version of the OS. Hopefully you&rsquo;ll never need to rely on a backup ISO but if you do, you are prepared!</p>
 
-<p>Slowly input these commands into Terminal. These worked for me when I used them, but please note that if this erases something on your machine, magically makes you coffee or conjures gnomes, I take no responsibility.</p>
-
-<figure class='code'><figcaption><span>How to make a Mac OS X 10.10 Yosemite ISO</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Mount the Yosemite installer image.</span>
-</span><span class='line'>hdiutil attach /Applications/Install<span class="se">\ </span>OS<span class="se">\ </span>X<span class="se">\ </span>Yosemite.app/Contents/SharedSupport/InstallESD.dmg -noverify -nobrowse -mountpoint /Volumes/install_app
-</span><span class='line'>
-</span><span class='line'><span class="c"># Convert the Yosemite image to a sparseimage. This will hold the necessary components.</span>
-</span><span class='line'>hdiutil convert /Volumes/install_app/BaseSystem.dmg -format UDSP -o /tmp/Yosemite
-</span><span class='line'>
-</span><span class='line'><span class="c"># Expand the size of the sparseimage so that it can hold the remaining files.</span>
-</span><span class='line'>hdiutil resize -size 8g /tmp/Yosemite.sparseimage
-</span><span class='line'>
-</span><span class='line'><span class="c"># Mount the sparseimage.</span>
-</span><span class='line'>hdiutil attach /tmp/Yosemite.sparseimage -noverify -nobrowse -mountpoint /Volumes/install_build
-</span><span class='line'>
-</span><span class='line'><span class="c"># Move the Yosemite files to your sparseimage.</span>
-</span><span class='line'><span class="c"># This may take a little depending on the speed of your drive. Enjoy a coffee!</span>
-</span><span class='line'>rm /Volumes/install_build/System/Installation/Packages
-</span><span class='line'>cp -rp /Volumes/install_app/Packages /Volumes/install_build/System/Installation/
-</span><span class='line'>cp -rp /Volumes/install_app/BaseSystem.chunklist /Volumes/install_build
-</span><span class='line'>cp -rp /Volumes/install_app/BaseSystem.dmg /Volumes/install_build
-</span><span class='line'>
-</span><span class='line'><span class="c"># Unmount the Yosemite installer image and sparseimage.</span>
-</span><span class='line'>hdiutil detach /Volumes/install_app
-</span><span class='line'>hdiutil detach /Volumes/install_build
-</span><span class='line'>
-</span><span class='line'><span class="c"># Remove free space from the sparseimage so that it won&#39;t take up 8GB.</span>
-</span><span class='line'>hdiutil resize -size <span class="sb">`</span>hdiutil resize -limits /tmp/Yosemite.sparseimage <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> awk <span class="s1">&#39;{ print $1 }&#39;</span><span class="sb">`</span>b /tmp/Yosemite.sparseimage
-</span><span class='line'>
-</span><span class='line'><span class="c"># Convert to a cdr.</span>
-</span><span class='line'>hdiutil convert /tmp/Yosemite.sparseimage -format UDTO -o /tmp/Yosemite
-</span><span class='line'>
-</span><span class='line'><span class="c"># Delete the sparseimage, since you created a cdr in the prior step.</span>
-</span><span class='line'>rm /tmp/Yosemite.sparseimage
-</span><span class='line'>
-</span><span class='line'><span class="c"># Move the cdr to the desktop and rename it from a cdr to an ISO.</span>
-</span><span class='line'>mv /tmp/Yosemite.cdr ~/Desktop/Yosemite.iso
-</span><span class='line'>
-</span><span class='line'><span class="c"># Throw your hands in the air and exclaim &quot;huzzah!!&quot; You&#39;re done.</span>
-</span></code></pre></td></tr></table></div></figure>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -229,6 +191,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/">Modular Inverses With the Extended Euclidean Algorithm</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso/">Creating a Mac OS X 10.10 Yosemite ISO</a>

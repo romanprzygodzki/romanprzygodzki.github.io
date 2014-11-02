@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Os_x | Roman's Clock Cycles]]></title>
   <link href="http://romanprzygodzki.github.io/blog/categories/os-x/atom.xml" rel="self"/>
   <link href="http://romanprzygodzki.github.io/"/>
-  <updated>2014-10-28T22:47:34-04:00</updated>
+  <updated>2014-11-01T22:30:05-04:00</updated>
   <id>http://romanprzygodzki.github.io/</id>
   <author>
     <name><![CDATA[Roman Przygodzki]]></name>
@@ -19,6 +19,9 @@
     <updated>2014-10-27T23:21:00-04:00</updated>
     <id>http://romanprzygodzki.github.io/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso</id>
     <content type="html"><![CDATA[<p>Here are instructions on how to create an ISO of OS X Yosemite 10.10. This might be helpful in the event that a future OS release (e.g. 10.10.1) breaks <em>that one program</em> (or four&hellip;) that must work and you need to roll back to a prior version of the OS. Hopefully you&rsquo;ll never need to rely on a backup ISO but if you do, you are prepared!</p>
+
+<!-- more -->
+
 
 <p>Slowly input these commands into Terminal. These worked for me when I used them, but please note that if this erases something on your machine, magically makes you coffee or conjures gnomes, I take no responsibility.</p>
 

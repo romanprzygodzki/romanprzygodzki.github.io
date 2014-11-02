@@ -1,24 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Roman's Clock Cycles]]></title>
-  <link href="http://romanprzygodzki.github.io/atom.xml" rel="self"/>
-  <link href="http://romanprzygodzki.github.io/"/>
-  <updated>2014-11-01T22:30:05-04:00</updated>
-  <id>http://romanprzygodzki.github.io/</id>
-  <author>
-    <name><![CDATA[Roman Przygodzki]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Modular Inverses With the Extended Euclidean Algorithm - Roman&#8217;s Clock Cycles</title>
+  <meta name="author" content="Roman Przygodzki">
 
   
-  <entry>
-    <title type="html"><![CDATA[Modular Inverses With the Extended Euclidean Algorithm]]></title>
-    <link href="http://romanprzygodzki.github.io/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/"/>
-    <updated>2014-11-01T21:44:18-04:00</updated>
-    <id>http://romanprzygodzki.github.io/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm</id>
-    <content type="html"><![CDATA[<p>This evening, I was working on a project that deals with massive sparse matrices. My head promptly started hurting so I decided to play with the Extended Euclidean Algorithm instead. This algorithm is used to compute modular inverses, a key element of public key cryptography.</p>
+  <meta name="description" content="This evening, I was working on a project that deals with massive sparse matrices. My head promptly started hurting so I decided to play with the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://romanprzygodzki.github.io/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Roman's Clock Cycles" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-56106854-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Roman&#8217;s Clock Cycles</a></h1>
+  
+    <h2>Programming, math, infosec, business, bass and biking are best enjoyed with coffee.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:romanprzygodzki.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+<li><a href="/license">License</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Modular Inverses With the Extended Euclidean Algorithm</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-01T21:44:18-04:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This evening, I was working on a project that deals with massive sparse matrices. My head promptly started hurting so I decided to play with the Extended Euclidean Algorithm instead. This algorithm is used to compute modular inverses, a key element of public key cryptography.</p>
 
 <!-- more -->
 
@@ -123,105 +202,145 @@
 </span><span class='line'>  <span class="n">main</span><span class="p">()</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Creating a Mac OS X 10.10 Yosemite ISO]]></title>
-    <link href="http://romanprzygodzki.github.io/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso/"/>
-    <updated>2014-10-27T23:21:00-04:00</updated>
-    <id>http://romanprzygodzki.github.io/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso</id>
-    <content type="html"><![CDATA[<p>Here are instructions on how to create an ISO of OS X Yosemite 10.10. This might be helpful in the event that a future OS release (e.g. 10.10.1) breaks <em>that one program</em> (or four&hellip;) that must work and you need to roll back to a prior version of the OS. Hopefully you&rsquo;ll never need to rely on a backup ISO but if you do, you are prepared!</p>
 
-<!-- more -->
+<span class="byline author vcard">Posted by <span class="fn">Roman Przygodzki</span></span>
+
+      
 
 
-<p>Slowly input these commands into Terminal. These worked for me when I used them, but please note that if this erases something on your machine, magically makes you coffee or conjures gnomes, I take no responsibility.</p>
 
-<figure class='code'><figcaption><span>How to make a Mac OS X 10.10 Yosemite ISO</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Mount the Yosemite installer image.</span>
-</span><span class='line'>hdiutil attach /Applications/Install<span class="se">\ </span>OS<span class="se">\ </span>X<span class="se">\ </span>Yosemite.app/Contents/SharedSupport/InstallESD.dmg -noverify -nobrowse -mountpoint /Volumes/install_app
-</span><span class='line'>
-</span><span class='line'><span class="c"># Convert the Yosemite image to a sparseimage. This will hold the necessary components.</span>
-</span><span class='line'>hdiutil convert /Volumes/install_app/BaseSystem.dmg -format UDSP -o /tmp/Yosemite
-</span><span class='line'>
-</span><span class='line'><span class="c"># Expand the size of the sparseimage so that it can hold the remaining files.</span>
-</span><span class='line'>hdiutil resize -size 8g /tmp/Yosemite.sparseimage
-</span><span class='line'>
-</span><span class='line'><span class="c"># Mount the sparseimage.</span>
-</span><span class='line'>hdiutil attach /tmp/Yosemite.sparseimage -noverify -nobrowse -mountpoint /Volumes/install_build
-</span><span class='line'>
-</span><span class='line'><span class="c"># Move the Yosemite files to your sparseimage.</span>
-</span><span class='line'><span class="c"># This may take a little depending on the speed of your drive. Enjoy a coffee!</span>
-</span><span class='line'>rm /Volumes/install_build/System/Installation/Packages
-</span><span class='line'>cp -rp /Volumes/install_app/Packages /Volumes/install_build/System/Installation/
-</span><span class='line'>cp -rp /Volumes/install_app/BaseSystem.chunklist /Volumes/install_build
-</span><span class='line'>cp -rp /Volumes/install_app/BaseSystem.dmg /Volumes/install_build
-</span><span class='line'>
-</span><span class='line'><span class="c"># Unmount the Yosemite installer image and sparseimage.</span>
-</span><span class='line'>hdiutil detach /Volumes/install_app
-</span><span class='line'>hdiutil detach /Volumes/install_build
-</span><span class='line'>
-</span><span class='line'><span class="c"># Remove free space from the sparseimage so that it won&#39;t take up 8GB.</span>
-</span><span class='line'>hdiutil resize -size <span class="sb">`</span>hdiutil resize -limits /tmp/Yosemite.sparseimage <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> awk <span class="s1">&#39;{ print $1 }&#39;</span><span class="sb">`</span>b /tmp/Yosemite.sparseimage
-</span><span class='line'>
-</span><span class='line'><span class="c"># Convert to a cdr.</span>
-</span><span class='line'>hdiutil convert /tmp/Yosemite.sparseimage -format UDTO -o /tmp/Yosemite
-</span><span class='line'>
-</span><span class='line'><span class="c"># Delete the sparseimage, since you created a cdr in the prior step.</span>
-</span><span class='line'>rm /tmp/Yosemite.sparseimage
-</span><span class='line'>
-</span><span class='line'><span class="c"># Move the cdr to the desktop and rename it from a cdr to an ISO.</span>
-</span><span class='line'>mv /tmp/Yosemite.cdr ~/Desktop/Yosemite.iso
-</span><span class='line'>
-</span><span class='line'><span class="c"># Throw your hands in the air and exclaim &quot;huzzah!!&quot; You&#39;re done.</span>
-</span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
+<time class='entry-date' datetime='2014-11-01T21:44:18-04:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
+      
+
+<span class="categories">
   
-  <entry>
-    <title type="html"><![CDATA[Test Post]]></title>
-    <link href="http://romanprzygodzki.github.io/blog/2014/10/26/test-post/"/>
-    <updated>2014-10-26T15:48:20-04:00</updated>
-    <id>http://romanprzygodzki.github.io/blog/2014/10/26/test-post</id>
-    <content type="html"><![CDATA[<p>I kinda know what I&rsquo;m doing!</p>
-]]></content>
-  </entry>
+    <a class='category' href='/blog/categories/cryptography/'>cryptography</a>, <a class='category' href='/blog/categories/math/'>math</a>, <a class='category' href='/blog/categories/python/'>python</a>
   
-</feed>
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://romanprzygodzki.github.io/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/" data-via="romanprzygodzki" data-counturl="http://romanprzygodzki.github.io/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso/" title="Previous Post: creating a Mac OS X 10.10 Yosemite ISO">&laquo; creating a Mac OS X 10.10 Yosemite ISO</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  	<img src = "/images/me.jpg">
+	<p>
+	Follow me <a href="https://twitter.com/RomanPrzygodzki">@RomanPrzygodzki</a>
+	</p>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/">Modular Inverses With the Extended Euclidean Algorithm</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/27/creating-an-os-x-10-dot-10-yosemite-bootable-iso/">Creating a Mac OS X 10.10 Yosemite ISO</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/26/test-post/">Test Post</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/romanprzygodzki">@romanprzygodzki</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'romanprzygodzki',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Roman Przygodzki -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <p>Blog posts are mine personally and do not reflect the opinions of my employer.</p>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

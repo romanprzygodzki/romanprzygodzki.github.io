@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Roman's Clock Cycles]]></title>
+  <link href="http://romanprzygodzki.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://romanprzygodzki.github.io/"/>
+  <updated>2014-11-01T22:30:05-04:00</updated>
+  <id>http://romanprzygodzki.github.io/</id>
+  <author>
+    <name><![CDATA[Roman Przygodzki]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Modular Inverses With the Extended Euclidean Algorithm]]></title>
+    <link href="http://romanprzygodzki.github.io/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/"/>
+    <updated>2014-11-01T21:44:18-04:00</updated>
+    <id>http://romanprzygodzki.github.io/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm</id>
+    <content type="html"><![CDATA[<p>This evening, I was working on a project that deals with massive sparse matrices. My head promptly started hurting so I decided to play with the Extended Euclidean Algorithm instead. This algorithm is used to compute modular inverses, a key element of public key cryptography.</p>
+
+<!-- more -->
+
+
+<p>The script computes the modular inverse of <code>a modulo m</code>. It utilizes optparse, which allows you to specify your input parameters right in the command line rather than tinkering with the script.</p>
+
+<p><code>python Extended_Euclidean.py -a [specify a] -m [specify m]</code></p>
+
+<p>I hope someone finds this useful!</p>
+
+<pre><code class="python Extended Euclidean Algorithm https://github.com/romanprzygodzki/math/blob/master/Extended_Euclidean.py">import optparse
+def extended_euclidean(a, m):
+
+    u = 1
+    v = 0
+    x = 0
+    y = 1
+    r = 1
+
+    while r != 0:
+        r = a % m
+
+        q = (a - r) / m
+        s = u - q * v
+        t = x - q * y
+
+        a = m
+        m = r
+
+        u = v
+        x = y
+
+        v = s
+        y = t
+
+    return u
+
+def main():
+    parser = optparse.OptionParser('\nUsage: '+\
+    '\nThis computes the modular inverse of a modulo m [e.g. (a)^-1 mod m]'+\
+    '\n-a &lt;specify a&gt; ' +\
+    '\n-m &lt;specify m&gt;')
+    parser.add_option('-a', dest = 'a', type = int, help = 'specify a')
+    parser.add_option('-m', dest = 'm', type = int, help = 'specify m')
+    (options, args) = parser.parse_args()
+    if options.a == None or options.m == None:
+        print parser.usage
+        exit(0)
+    else:
+        a = options.a
+        m = options.m
+
+    print "The inverse of %s modulo %s is %s" % (a,m,extended_euclidean(a, m))
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
