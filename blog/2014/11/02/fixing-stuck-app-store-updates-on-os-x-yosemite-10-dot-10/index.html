@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Cryptography - Roman&#8217;s Clock Cycles</title>
+  <title>Fixing Stuck App Store Updates on OS X Yosemite 10.10 - Roman&#8217;s Clock Cycles</title>
   <meta name="author" content="Roman Przygodzki">
 
   
-  <meta name="description" content="Category: cryptography">
+  <meta name="description" content="After updating to Mac OS X Yosemite, I ran into an issue where the Mac App Store kept thinking I had an update to install for Garageband. After &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://romanprzygodzki.github.io/blog/categories/cryptography">
+  <link rel="canonical" href="http://romanprzygodzki.github.io/blog/2014/11/02/fixing-stuck-app-store-updates-on-os-x-yosemite-10-dot-10">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Roman's Clock Cycles" type="application/atom+xml">
@@ -77,35 +77,88 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Cryptography</h1>
+    
+      <h1 class="entry-title">Fixing Stuck App Store Updates on OS X Yosemite 10.10</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-02T12:33:28-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>12:33 pm</span></time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>After updating to Mac OS X Yosemite, I ran into an issue where the Mac App Store kept thinking I had an update to install for Garageband. After searching the internets, I noticed others having similar problems, but I couldn&rsquo;t find a solution that worked. After some tinkering, I was able to find a fix.</p>
 
-  
-  <h2>2014</h2>
-
-<article>
-  
-<h1><a href="/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/">Modular Inverses With the Extended Euclidean Algorithm</a></h1>
-<time datetime="2014-11-01T21:44:18-04:00" pubdate><span class='month'>Nov</span> <span class='day'>01</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cryptography/'>cryptography</a>, <a class='category' href='/blog/categories/math/'>math</a>, <a class='category' href='/blog/categories/python/'>python</a></span>
-</footer>
+<!-- more -->
 
 
-</article>
+<p>Unlike Vinny, six times was not a charm&hellip;</p>
 
+<p>After the sixth time I attempted to update Garageband to version 10.0.3, I went to the <code>Applications</code> folder and noticed that Garageband remained at version 10.0.2. So it seemed like the update was downloaded but failed to install. Here is my solution:</p>
+
+<p>(1) Save any unsaved work.<br>
+(2) Open the Mac App Store.<br>
+(3) Go to <code>Store</code> then <code>Sign Out</code>.<br>
+(4) Quit the Mac App Store.<br>
+(5) You didn&rsquo;t skip step (1), did you? If you did, save any unsaved work before proceeding. Losing unsaved work is not fun.<br>
+(6) Log out of your user <em>but be sure to uncheck the</em> <code>Reopen windows when logging back in</code> <em>checkbox.</em> This is why it is important to do step 1, <em>otherwise you&rsquo;ll lose any unsaved work!</em><br>
+(7) Log back into your user.<br>
+(8) Open the Mac App Store and run the software updates.<br>
+(9) Your updates will hopefully install successfully. Exclaim <em>huzzah</em> if they do!<br>
+(10) Because we unchecked <code>Reopen windows when logging back in</code> in step 6, it will remain unchecked unless you specify otherwise. If you use this feature, log out and check on <code>Reopen windows when logging back in</code> so you don&rsquo;t lose unsaved work the next time you log off.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Roman Przygodzki</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-11-02T12:33:28-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>12:33 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/os-x/'>os_x</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://romanprzygodzki.github.io/blog/2014/11/02/fixing-stuck-app-store-updates-on-os-x-yosemite-10-dot-10/" data-via="romanprzygodzki" data-counturl="http://romanprzygodzki.github.io/blog/2014/11/02/fixing-stuck-app-store-updates-on-os-x-yosemite-10-dot-10/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/01/modular-inverses-with-the-extended-euclidean-algorithm/" title="Previous Post: Modular Inverses with the Extended Euclidean Algorithm">&laquo; Modular Inverses with the Extended Euclidean Algorithm</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

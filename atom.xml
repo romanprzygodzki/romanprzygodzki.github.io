@@ -4,7 +4,7 @@
   <title><![CDATA[Roman's Clock Cycles]]></title>
   <link href="http://romanprzygodzki.github.io/atom.xml" rel="self"/>
   <link href="http://romanprzygodzki.github.io/"/>
-  <updated>2014-11-01T22:30:05-04:00</updated>
+  <updated>2014-11-02T13:28:09-05:00</updated>
   <id>http://romanprzygodzki.github.io/</id>
   <author>
     <name><![CDATA[Roman Przygodzki]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Stuck App Store Updates on OS X Yosemite 10.10]]></title>
+    <link href="http://romanprzygodzki.github.io/blog/2014/11/02/fixing-stuck-app-store-updates-on-os-x-yosemite-10-dot-10/"/>
+    <updated>2014-11-02T12:33:28-05:00</updated>
+    <id>http://romanprzygodzki.github.io/blog/2014/11/02/fixing-stuck-app-store-updates-on-os-x-yosemite-10-dot-10</id>
+    <content type="html"><![CDATA[<p>After updating to Mac OS X Yosemite, I ran into an issue where the Mac App Store kept thinking I had an update to install for Garageband. After searching the internets, I noticed others having similar problems, but I couldn&rsquo;t find a solution that worked. After some tinkering, I was able to find a fix.</p>
+
+<!-- more -->
+
+
+<p>Unlike Vinny, six times was not a charm&hellip;</p>
+
+<p>After the sixth time I attempted to update Garageband to version 10.0.3, I went to the <code>Applications</code> folder and noticed that Garageband remained at version 10.0.2. So it seemed like the update was downloaded but failed to install. Here is my solution:</p>
+
+<p>(1) Save any unsaved work.<br>
+(2) Open the Mac App Store.<br>
+(3) Go to <code>Store</code> then <code>Sign Out</code>.<br>
+(4) Quit the Mac App Store.<br>
+(5) You didn&rsquo;t skip step (1), did you? If you did, save any unsaved work before proceeding. Losing unsaved work is not fun.<br>
+(6) Log out of your user <em>but be sure to uncheck the</em> <code>Reopen windows when logging back in</code> <em>checkbox.</em> This is why it is important to do step 1, <em>otherwise you&rsquo;ll lose any unsaved work!</em><br>
+(7) Log back into your user.<br>
+(8) Open the Mac App Store and run the software updates.<br>
+(9) Your updates will hopefully install successfully. Exclaim <em>huzzah</em> if they do!<br>
+(10) Because we unchecked <code>Reopen windows when logging back in</code> in step 6, it will remain unchecked unless you specify otherwise. If you use this feature, log out and check on <code>Reopen windows when logging back in</code> so you don&rsquo;t lose unsaved work the next time you log off.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Modular Inverses With the Extended Euclidean Algorithm]]></title>
